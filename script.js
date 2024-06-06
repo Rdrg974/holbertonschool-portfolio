@@ -19,3 +19,10 @@ btnPopup.addEventListener('click', ()=> {
 iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const countrySelect = document.getElementById('country');
+    for (let option of countrySelect.options) {
+        option.text = `${option.getAttribute('data-flag')} ${option.text}`;
+    }
+});
