@@ -17,6 +17,10 @@ body {
     background-position: center;
 }
 
+body, h1, p {
+    color: #fff;
+}
+
 header {
     position: fixed;
     top: 0;
