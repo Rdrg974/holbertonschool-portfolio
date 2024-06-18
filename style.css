@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,9 +15,6 @@ body {
     background: url('background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-}
-
-body, h1, p {
     color: #fff;
 }
 
@@ -86,175 +83,72 @@ header {
     color: #162938;
 }
 
-.wrapper {
-    position: relative;
-    width: 400px;
-    height: 440px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; 
-    transform: scale(0);
-    transition: transform .5s ease, height .2s ease;
-}
-
-.wrapper.active-popup {
-    transform: scale(1);
-}
-
-.wrapper.active {
-    height: 520px;
-}
-
-.wrapper .form-box {
+.content {
+    max-width: 800px;
     width: 100%;
-    padding: 40px;
+    padding: 20px;
+    margin-top: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.wrapper .form-box.login {
-   transition: transform .18s ease;
-   transform: translateX(0);
+.content h1 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.wrapper.active .form-box.login {
-    transition: none;
-    transform: translateX(-400px);
+.content p {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.wrapper .form-box.register {
-    position: absolute;
-    transition: none;
-    transform: translateX(400px);
-}
-
-.wrapper.active .form-box.register {
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-
-.wrapper .icon-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: #000;
-    font-size: 2em;
-    color: #fff;
+.window {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border-bottom-left-radius: 20px;
-    cursor: pointer;
-    z-index: 1;
 }
 
-.form-box h2 {
-    font-size: 2em;
-    color: #fff;
+.window img {
+    max-width: 90%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.text-content {
+    width: 100%;
     text-align: center;
 }
 
-.input-box {
-    position: relative;
+.controls {
     width: 100%;
-    height: 50px;
-    border-bottom: 2px solid #fff;
-    margin: 30px 0;
-}
-
-.input-box label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #fff;
-    transform: translateY(-50%);
-    font-size: 1em;
-    font-weight: 500;
-    pointer-events: none;
-    transition: .5s;
-}
-
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-    top: -5px;
-}
-
-.input-box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: #fff;
-    font-weight: 600;
-    padding: 0 35px 0 5px;
-}
-
-.input-box .icon {
-    position: absolute;
-    right: 8px;
-    font-size: 1.2em;
-    color: #fff;
-    line-height: 57px;
-}
-
-.remember-forgot {
-    font-size: 0.9em;
-    color: #fff;
-    font-weight: 500;
-    margin: -15px 0 15px;
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
-.remember-forgot label input {
-    accent-color: #fff;
-    margin-right: 3px;
-}
-
-.remember-forgot a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
-.btn {
-    width: 100%;
-    height: 45px;
-    background-color: #fff;
+.arrow-button {
+    background: none;
     border: none;
-    outline: none;
-    border-radius: 6px;
+    color: white;
+    font-size: 2rem;
     cursor: pointer;
-    font-size: 1em;
-    color: #000;
-    font-weight: 500;
+    outline: none;
 }
 
-.login-register {
-    font-size: 0.9em;
-    color: #fff;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
+.arrow-button:hover {
+    color: #ccc;
 }
 
-.login-register p a.register-link {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
+.arrow-button#leftButton {
+    margin-left: 20px;
 }
 
-.login-register p a.register-link:hover {
-    text-decoration: underline;
+.arrow-button#rightButton {
+    margin-right: 20px;
 }
