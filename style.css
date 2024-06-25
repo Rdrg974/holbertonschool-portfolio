@@ -131,7 +131,11 @@ header {
 }
 
 .controls {
-    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
@@ -162,11 +166,11 @@ header {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     width: 400px;
     height: 440px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -174,12 +178,11 @@ header {
     justify-content: center;
     align-items: center;
     overflow: hidden; 
-    transform: scale(0);
-    transition: transform .5s ease, height .2s ease;
+    transition: transform 0.5s ease, height 0.2s ease;
 }
 
 .wrapper.active-popup {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .wrapper.active {
@@ -218,7 +221,7 @@ header {
     right: 0;
     width: 45px;
     height: 45px;
-    background: #000;
+    background: none;
     font-size: 2em;
     color: #fff;
     display: flex;
@@ -313,4 +316,14 @@ header {
     font-weight: 500;
     color: #000;
     border-radius: 5px;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tutorial-image {
+    max-width: 100%;
+    height: auto;
 }
