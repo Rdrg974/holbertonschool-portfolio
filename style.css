@@ -23,16 +23,26 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    height: 50px; /* Ajuster la hauteur du header selon votre besoin */
+    padding: 0 100px; /* Ajuster les padding selon votre besoin */
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Aligne les éléments de navigation à droite */
     align-items: center;
     z-index: 99;
+    background: transparent; /* S'assurer que le fond est transparent */
 }
 
 .logo {
-    width: 150px;
+    position: absolute;
+    top: 10px; /* Ajuster la position verticale du logo */
+    left: 10px; /* Ajuster la position horizontale du logo */
+    width: 300px; /* Ajuster la taille du logo */
     height: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
 }
 
 .navigation a {
