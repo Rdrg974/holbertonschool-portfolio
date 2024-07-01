@@ -69,3 +69,54 @@ rightButton.addEventListener('click', () => {
 });
 
 updateContent(currentIndex);
+
+document.querySelector('.login form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const email = event.target.querySelector('input[type="email"]').value;
+    const password = event.target.querySelector('input[type="password"]').value;
+
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.auth) {
+            localStorage.setItem('token', data.token);
+            alert('Login successful');
+        } else {
+            alert('Login failed');
+        }
+    });
+});
+
+document.querySelector('.register form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = event.target.querySelector('input[type="text"]').value;
+    const email = event.target.querySelector('input[type="email"]').value;
+    const password = event.target.querySelector('input[type="password"]').value;
+
+    fetch('/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.auth) {
+            localStorage.setItem('token', data.token);
+            alert('Registration successful');
+            // Redirection vers la page de login
+            window.location.href = 'index.html'; // Remplacez par le chemin de votre page de login
+        } else {
+            alert('Registration failed');
+        }
+    });
+});

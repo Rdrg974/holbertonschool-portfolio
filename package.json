@@ -1,0 +1,31 @@
+{
+  "name": "holbertonschool-portfolio",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rdrg974/holbertonschool-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rdrg974/holbertonschool-portfolio/issues"
+  },
+  "homepage": "https://github.com/Rdrg974/holbertonschool-portfolio#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.4"
+  }
+}
