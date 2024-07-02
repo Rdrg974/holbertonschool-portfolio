@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS `db-game-othello`;
+
 CREATE DATABASE IF NOT EXISTS `db-game-othello`;
 
 USE `db-game-othello`;
@@ -7,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `User`(
 	`username` VARCHAR(45) NOT NULL,
 	`email` VARCHAR(255) NOT NULL,
 	`pwd` VARCHAR(255) NOT NULL,
-	`country`VARCHAR(45) NOT NULL
+	`country`VARCHAR(45) NOT NULL DEFAULT 'France',
 );
 
 CREATE TABLE IF NOT EXISTS `Score`(

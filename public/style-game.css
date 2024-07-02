@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start; /* Aligner sur la gauche */
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #gameContainer {
+    width: 60%; /* Réduire la largeur pour libérer de l'espace à droite */
+    height: 80%; /* Ajustez cette valeur selon vos besoins */
+    max-width: 60%; /* S'assurer que cela ne dépasse pas 60% de la largeur de l'écran */
+    max-height: 100%; /* S'assurer que cela ne dépasse pas la hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%; /* Ajouter une marge à gauche pour décaler */
+    margin-top: 10vh;
+  }
+  
+  #unity-canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #game {
+    background-color: black;
+  }
+  
