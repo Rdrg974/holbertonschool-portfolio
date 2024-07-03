@@ -102,22 +102,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ email, password })
             })
             .then(response => {
-                console.log(response);
-                if (!response.ok) {
+                if (response.status === 401 || response.status === 404) {
+                    loginError.textContent = 'Invalid email or password';
+                    return;
+                } else if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                response.json().then(data => {
-                    console.log(data);
-                    if (data.auth) {
-                        localStorage.setItem('token', data.token);
-                        window.location.href = '/rules.html';
-                    } else {
-                        loginError.textContent = 'Invalid email or password';
-                    }
-                });
+                return response.json();
+            })
+            .then(data => {
+                if (data.auth) {
+                    localStorage.setItem('token', data.token);
+                    window.location.href = '/rules.html';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                if (!loginError.textContent) {
+                    loginError.textContent = 'An error occurred during login. Please try again.';
+                }
             });
         });
     }
+
     const registerForm = document.querySelector('#register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', function(event) {
@@ -126,8 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const username = event.target.querySelector('input[type="text"]').value;
             const email = event.target.querySelector('input[type="email"]').value;
             const password = event.target.querySelector('input[type="password"]').value;
-
-            console.log(username, email, password);
 
             fetch('/register', {
                 method: 'POST',
@@ -140,7 +145,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                response.json();
+                return response.json();
+            })
+            .then(data => {
+                alert('Registration successful. Please log in.');
+                window.location.href = '/index.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred during registration. Please try again.');
+            });
+        });
+    }
+
+    const logoutButton = document.querySelector('.btnLogout-popup');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function() {
+            // Supprimez le token JWT du localStorage
+            localStorage.removeItem('token');
+
+            // Optionnel: Faites une requête POST vers la route /logout
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+                // Redirigez l'utilisateur vers la page de connexion
+                window.location.href = '/index.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
         });
     }

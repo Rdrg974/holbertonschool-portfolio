@@ -358,3 +358,10 @@ header {
     max-width: 100%;
     height: auto;
 }
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
