@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.auth) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('username', data.username)
+                    localStorage.setItem('email', data.email)
                     window.location.href = '/rules.html';
                 }
             })
