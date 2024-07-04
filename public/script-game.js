@@ -14,9 +14,9 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 }
 
 createUnityInstance(document.querySelector("#unity-canvas"), {
-  dataUrl: "Build/Game.data",
-  frameworkUrl: "Build/Game.framework.js",
-  codeUrl: "Build/Game.wasm",
+  dataUrl: "Build/Othello.data",
+  frameworkUrl: "Build/Othello.framework.js",
+  codeUrl: "Build/Othello.wasm",
   streamingAssetsUrl: "StreamingAssets",
   companyName: "DefaultCompany",
   productName: "Portfolio Project",

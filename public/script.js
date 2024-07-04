@@ -6,27 +6,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginLink = document.querySelector('.login-link');
     const registerLink = document.querySelector('.register-link');
 
+    // Sélection de l'overlay
+    const overlay = document.querySelector('.overlay');
+
+    // Fonction pour afficher l'overlay
+    function showOverlay() {
+        overlay.style.display = 'block';
+    }
+
+    // Fonction pour masquer l'overlay
+    function hideOverlay() {
+        overlay.style.display = 'none';
+    }
+
     if (registerLink) {
         registerLink.addEventListener('click', () => {
             wrapper.classList.add('active');
+            showOverlay(); // Affiche l'overlay lors de l'ouverture du formulaire d'inscription
         });
     }
 
     if (loginLink) {
         loginLink.addEventListener('click', () => {
             wrapper.classList.remove('active');
+            showOverlay(); // Affiche l'overlay lors de l'ouverture du formulaire de connexion
         });
     }
 
     if (btnPopup) {
         btnPopup.addEventListener('click', () => {
             wrapper.classList.add('active-popup');
+            showOverlay(); // Affiche l'overlay lors de l'ouverture du popup de connexion
         });
     }
 
     if (iconClose) {
         iconClose.addEventListener('click', () => {
             wrapper.classList.remove('active-popup');
+            hideOverlay(); // Masque l'overlay lors de la fermeture du popup
+        });
+    }
+
+    // Ajout d'un événement pour masquer l'overlay en cliquant dessus
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            wrapper.classList.remove('active-popup');
+            hideOverlay(); // Masque l'overlay lorsqu'on clique dessus
         });
     }
 

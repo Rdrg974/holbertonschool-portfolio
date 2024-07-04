@@ -15,7 +15,7 @@ router.post('/register', (req, res) => {
             console.error('Erreur lors de l\'enregistrement de l\'utilisateur:', err);
             return res.status(500).json({ message: 'There was a problem registering the user' });
         }
-        const token = jwt.sign({ id: result.insertId, username: username }, 'secretkey', { expiresIn: 86400 }); // 24 hours
+        const token = jwt.sign({ id: result.insertId, username: username, email: email }, 'secretkey', { expiresIn: 86400 }); // 24 hours
         res.status(200).json({ auth: true, token: token });
     });
 });
@@ -33,8 +33,8 @@ router.post('/login', (req, res) => {
         const passwordIsValid = bcrypt.compareSync(password, user.pwd);
         if (!passwordIsValid) return res.status(401).json({ message: 'Invalid password', auth: false });
 
-        const token = jwt.sign({ id: user.userId, username: user.username }, 'secretkey', { expiresIn: 86400 }); // 24 hours
-        res.status(200).json({ auth: true, token: token, username: user.username });
+        const token = jwt.sign({ id: user.userId, username: user.username, email: user.email }, 'secretkey', { expiresIn: 86400 }); // 24 hours
+        res.status(200).json({ auth: true, token: token, username: user.username, email: user.email });
     });
 });
 

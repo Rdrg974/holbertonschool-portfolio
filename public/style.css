@@ -193,6 +193,18 @@ header {
     margin-right: 20px;
 }
 
+/* Augmentation de l'opacité de l'overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Augmentation de l'opacité à 0.9 */
+    display: none;
+    z-index: 1;
+}
+
 .wrapper {
     position: fixed;
     top: 50%;
@@ -200,7 +212,7 @@ header {
     transform: translate(-50%, -50%) scale(0);
     width: 400px;
     height: 440px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.9); /* Fond complètement opaque */
     border: none;
     border-radius: 20px;
     backdrop-filter: blur(20px);
@@ -210,6 +222,7 @@ header {
     align-items: center;
     overflow: hidden; 
     transition: transform 0.5s ease, height 0.2s ease;
+    z-index: 2;
 }
 
 .wrapper.active-popup {
@@ -223,6 +236,8 @@ header {
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
+    background: rgba(0, 0, 0, 0.8); /* Assurez-vous que le fond du form-box soit également opaque */
+    border-radius: 20px;
 }
 
 .wrapper .form-box.login {
@@ -275,6 +290,11 @@ header {
     height: 50px;
     border-bottom: 2px solid #fff;
     margin: 30px 0;
+    z-index: 3;
+}
+
+.input-box p {
+    margin: 0; /* Supprime les marges */
 }
 
 .input-box label {
@@ -364,4 +384,78 @@ header {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
+}
+
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+.profile-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    color: #fff;
+    text-align: center;
+}
+
+.profile-box h2, .profile-box h3 {
+    margin-bottom: 20px;
+}
+
+.profile-box .input-box {
+    margin-bottom: 15px;
+    text-align: left;
+    border: none;
+}
+
+.profile-box .input-box p {
+    margin: 5px 0;
+}
+
+.profile-box .input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile-box .input-box span, .profile-box .input-box input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.profile-box .input-box input {
+    margin-top: 5px;
+}
+
+.profile-box .btn {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #000;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-box .btn:hover {
+    background-color: #ccc;
+}
+
+.button-container {
+    margin-top: -50px;
 }

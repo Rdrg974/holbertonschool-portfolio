@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const socket = io();
 
     const messageContainer = document.getElementById('message-container');
-    const nameInput = document.getElementById('name');
+    const nameInput = document.getElementById('username');
     const messageForm = document.getElementById('message-form');
     const messageInput = document.getElementById('message-input');
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!username) {
         window.location.href = '/';
     } else {
-        nameInput.value = username;
+        nameInput.textContent = username;
     }
 
     function sendMessage() {
