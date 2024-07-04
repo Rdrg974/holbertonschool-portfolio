@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data.auth) {
                     localStorage.setItem('token', data.token);
+                    localStorage.setItem('username', data.username)
                     window.location.href = '/rules.html';
                 }
             })

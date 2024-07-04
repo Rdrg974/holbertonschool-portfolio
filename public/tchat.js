@@ -11,10 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
         sendMessage();
     });
 
+    const username = localStorage.getItem('username');
+
+    if (!username) {
+        window.location.href = '/';
+    } else {
+        nameInput.value = username;
+    }
+
     function sendMessage() {
         if (messageInput.value === '') return;
         const data = {
-            name: nameInput.value,
+            name: username,
             message: messageInput.value,
             dateTime: new Date()
         };
@@ -46,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     messageInput.addEventListener('focus', (e) => {
         socket.emit('feedback', {
-            feedback: `${nameInput.value} is typing a message...`
+            feedback: `${username} is typing a message...`
         });
     });
 
     messageInput.addEventListener('keypress', (e) => {
         socket.emit('feedback', {
-            feedback: `${nameInput.value} is typing a message...`
+            feedback: `${username} is typing a message...`
         });
     });
 
