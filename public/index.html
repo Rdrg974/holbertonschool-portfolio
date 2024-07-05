@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register and login page | DiscOthello</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
 <body>
-
-    <header>
-        <img src="Images/logo.gif" alt="Logo" class="logo">
-        <nav class="navigation">
+    <header id="header">
+        <img src="./assets/images/logo.gif" alt="Logo" class="logo">
+        <nav class="navigation" id="header">
             <a href="index.html">Home</a>
             <a href="rules.html">Rules</a>
             <button class="btnLogin-popup">Login</button>
@@ -81,12 +80,24 @@
         </div>
     </div>
     <div id="landing-page">
-        <h1>DiscOthello</h1>
-        <h3>Explore the depths of strategy in this captivating game where every move can change the tide!</h3>
+        <h1 class="title">DiscOthello</h1><br><br>
+        <h3 class="en-tete">Explore the depths of strategy in this captivating game where every move can change the tide!</h3><br><br>
+        <div class="content">
+            <p class="left">Discover a new dimension of classical gaming with Othello, where the classic strategy game comes to life with 3D graphics. Perfect for beginners and veterans alike.</p>
+            <img src="./assets/images/images-game/Plateau.png" alt="Othello" class="othello-right" width="400px" height="350">
+        </div>
+        <div class="content">
+            <img src="./assets/images/images-game/Multiplayer.png" alt="Multiplayer" class="multiplayer-left" width="400px" height="390">
+            <p class="right">Choose between single-player mode to improve your skills and multiplayer mode to take on friends and opponents from all over the world. Each game is a new strategic adventure.</p>
+        </div>
+        <div class="content">
+            <p class="left">Access detailed tutorials and chat with other players via our integrated chat. Share your strategies, learn from others and benefit from a passionate and active community.</p>
+            <img src="./assets/images/images-game/Chat-game.png" alt="Chat" class="othello-right" width="220" height="400">
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

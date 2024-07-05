@@ -1,0 +1,49 @@
+main {
+    margin-top: -300px; /* Ajuste cet espace pour déplacer le tableau vers le haut */
+    width: 80%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.2em;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #404241; /* Changez cette couleur selon vos besoins */
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+table th, table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Changez cette couleur selon vos besoins */
+}
+
+table tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05); /* Changez cette couleur selon vos besoins */
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #404241; /* Changez cette couleur selon vos besoins */
+}
+
+table tbody tr.active-row {
+    font-weight: bold;
+    color: #404241; /* Changez cette couleur selon vos besoins */
+}
+
+#scores-table {
+    margin: 0 auto;
+}

@@ -37,4 +37,22 @@ router.post('/addscore', (req, res) => {
     });
 });
 
+// Endpoint pour récupérer les scores individuels des utilisateurs
+router.get('/scores', (req, res) => {
+    const getScoresQuery = `
+        SELECT User.username, Score.score, Game.nbrGameWon, Game.nbrGameLost, Game.nbrGamePlayed
+        FROM User
+        JOIN Score ON User.userId = Score.userId
+        JOIN Game ON User.userId = Game.userId
+        ORDER BY Score.score DESC;
+    `;
+    db.query(getScoresQuery, (err, results) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        res.status(200).json(results);
+    });
+});
+
+
 module.exports = router;

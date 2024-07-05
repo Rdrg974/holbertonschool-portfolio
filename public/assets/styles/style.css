@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    margin: 0;
+    padding-top: 60px;
+    overflow-x: auto;
+    transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Ajuster la hauteur du header selon votre besoin */
+    padding: 0 100px; /* Ajuster les padding selon votre besoin */
+    display: flex;
+    justify-content: flex-end; /* Aligne les éléments de navigation à droite */
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background: transparent; /* S'assurer que le fond est transparent */
+}
+
+header.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.logo {
+    position: absolute;
+    top: 10px; /* Ajuster la position verticale du logo */
+    left: 10px; /* Ajuster la position horizontale du logo */
+    width: 300px; /* Ajuster la taille du logo */
+    height: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogout-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.navigation .btnLogout-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.content {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.content-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.header-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-text h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.header-text p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.window {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.window img {
+    max-width: 70%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.text-content {
+    width: 100%;
+    text-align: center;
+}
+
+.controls {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.arrow-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.arrow-button:hover {
+    color: #ccc;
+}
+
+.arrow-button#leftButton {
+    margin-left: 20px;
+}
+
+.arrow-button#rightButton {
+    margin-right: 20px;
+}
+
+/* Augmentation de l'opacité de l'overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Augmentation de l'opacité à 0.9 */
+    display: none;
+    z-index: 1;
+}
+
+.wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 400px;
+    height: 440px;
+    background: rgba(0, 0, 0, 0.9); /* Fond complètement opaque */
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    transition: transform 0.5s ease, height 0.2s ease;
+    z-index: 2;
+}
+
+.wrapper.active-popup {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8); /* Assurez-vous que le fond du form-box soit également opaque */
+    border-radius: 20px;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: none;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+    z-index: 3;
+}
+
+.input-box p {
+    margin: 0; /* Supprime les marges */
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #fff;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    padding: 0 35px 0 5px;
+}
+
+.input-box ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 15px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #000;
+    border-radius: 5px;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tutorial-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+.profile-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    color: #fff;
+    text-align: center;
+}
+
+.profile-box h2, .profile-box h3 {
+    margin-bottom: 20px;
+}
+
+.profile-box .input-box {
+    margin-bottom: 15px;
+    text-align: left;
+    border: none;
+}
+
+.profile-box .input-box p {
+    margin: 5px 0;
+}
+
+.profile-box .input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile-box .input-box span, .profile-box .input-box input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.profile-box .input-box input {
+    margin-top: 5px;
+}
+
+.profile-box .btn {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #000;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-box .btn:hover {
+    background-color: #ccc;
+}
+
+.button-container {
+    margin-top: -50px;
+}
+
+#landing-page {
+    margin-top: 200px;
+    flex: 1;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 8em;
+}
+
+.en-tete {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 2em;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 350px;
+}
+
+.left, .right {
+    width: 45%;
+    line-height: 2.5;
+    text-align: justify;
+}
+
+.othello-right, .multiplayer-left {
+    width: 45%;
+    height: auto;
+}
+
+.left {
+    order: 2;
+    margin-right: 30px;
+}
+
+.othello-right {
+    order: 1;
+}
+
+.right {
+    order: 1;
+    margin-left: 30px;
+}
+
+.multiplayero-left {
+    order: 2;
+}
