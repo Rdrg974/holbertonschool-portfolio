@@ -24,9 +24,9 @@ function sendUserInfoToUnity() {
 }
 
 createUnityInstance(document.querySelector("#unity-canvas"), {
-  dataUrl: "Build/Games.data",
-  frameworkUrl: "Build/Games.framework.js",
-  codeUrl: "Build/Games.wasm",
+  dataUrl: "Build/Othello.data",
+  frameworkUrl: "Build/Othello.framework.js",
+  codeUrl: "Build/Othello.wasm",
   streamingAssetsUrl: "StreamingAssets",
   companyName: "DefaultCompany",
   productName: "Portfolio Project",
