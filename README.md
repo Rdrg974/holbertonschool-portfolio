@@ -1,4 +1,4 @@
-# DISCOTHELLO 3D <img height="60px" width="60px" align="right" src="./public/assets/images/logo.gif" alt="logo-discothello">
+# DISCOTHELLO 3D <img height="100px" width="130px" align="right" src="./public/assets/images/logo.gif" alt="logo-discothello">
 
 ## Table of contents
 
