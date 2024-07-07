@@ -9,6 +9,8 @@
     <br>
         <a href="#files-description">Files description</a>
     <br>
+        <a href="#how-to-play">How to play</a>
+    <br>
         <a href="#authors">Authors</a>
 </details>
 
