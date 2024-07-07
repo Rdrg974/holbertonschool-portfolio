@@ -1,4 +1,4 @@
-# DISCOTHELLO 3D <img height="50px" align="right" src="./public/assets/images/logo.gif" alt="logo-discothello">
+# DISCOTHELLO 3D <img align="right" src="./public/assets/images/logo.gif" alt="logo-discothello">
 
 ## Table of contents
 
@@ -21,7 +21,7 @@ The project started as a way to challenge ourselves and create something engagin
 ## <span id="technologies">Technologies</span>
 
 <p align="left">
-    ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+    <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
     ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
     ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
     ![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white)
