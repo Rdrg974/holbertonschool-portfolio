@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligner sur la gauche */
+  align-items: center;
+  height: 100vh;
+  background-color: black; /* Fond noir */
+  font-family: 'Poppins', sans-serif; /* Appliquer la police */
+}
+
+/* Styles pour le header et le logo */
+header {
+  position: fixed;
+  width: 100%;
+  height: 50px; /* Ajuster la hauteur du header selon votre besoin */
+  padding: 0 100px; /* Ajuster les padding selon votre besoin */
+  display: flex;
+  justify-content: flex-end; /* Aligne les éléments de navigation à droite */
+  align-items: center;
+  z-index: 99;
+  background: black; /* Fond noir */
+}
+
+.logo {
+  position: absolute;
+  top: 10px; /* Ajuster la position verticale du logo */
+  left: 10px; /* Ajuster la position horizontale du logo */
+  width: 300px; /* Ajuster la taille du logo */
+  height: auto;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.navigation .btnLogout-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+
+.navigation .btnLogout-popup:hover {
+  background: #fff;
+  color: #162938;
+}
+
+/* Game Container and Canvas Styles */
+#gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 150px;
+  bottom: 10px;
+  left: 10px;
+  right: 500px;
+  margin: auto;
+  background: #000;
+  overflow: hidden;
+}
+
+#unity-canvas {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .navigation {
+      flex-direction: column;
+  }
+
+  .navigation a {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      margin-left: 0;
+  }
+
+  .navigation .btnLogin-popup,
+  .navigation .btnLogout-popup {
+      margin-top: 10px;
+      margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo {
+      max-width: 100px;
+  }
+
+  .navigation a {
+      font-size: 1em;
+  }
+
+  .navigation .btnLogin-popup,
+  .navigation .btnLogout-popup {
+      font-size: 0.9em;
+      width: 100px;
+      height: 40px;
+  }
+}
+
+.chatContainer {
+  border: 8px solid;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: rgba(235, 235, 235, 0.1);
+  margin-left: 1050px;
+  margin-top: 95px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.name {
+  display: flex;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 8px 16px;
+  background-color: rgba(235, 235, 235, 0.1);
+}
+
+.username {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  flex-grow: 1;
+  border: none;
+  margin: 0px 12px;
+  outline: none;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(235, 235, 235, 0.1);
+  width: 400px;
+  height: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.message-left, .message-right {
+  list-style: none;
+  padding: 8px 12px;
+  margin: 12px;
+  max-width: 250px;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.message-left {
+  border-radius: 20px 20px 20px 0;
+  align-self: flex-start;
+  background-color: #fff;
+  box-shadow: -2px 2px 4px #dcdcdc;
+}
+
+.message-right {
+  border-radius: 20px 20px 0 20px;
+  align-self: flex-end;
+  background-color: #2d2d2d;
+  box-shadow: 2px 2px 4px #dcdcdc;
+  color: #f6f6f6;
+}
+
+.message-left > p > span, .message-right > p > span {
+  display: block;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.feedback {
+  font-style: italic;
+  font-size: 14px;
+  padding: 0 16px 16px 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.message-form {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.message-input {
+  flex-grow: 1;
+  height: 48px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  background-color: #fff;
+}
+
+.send-button {
+  height: 48px;
+  font-size: 16px;
+  border: none;
+  padding: 0 20px;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.v-divider {
+  height: 48px;
+  width: 2px;
+  background-color: #f6f6f6;
+}

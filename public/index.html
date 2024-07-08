@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register and login page | DiscOthello</title>
+    <link rel="stylesheet" href="./assets/styles/style-home.css">
+    <link rel="stylesheet" href="./assets/styles/footer.css">
+</head>
+
+<body>
+    <header id="header">
+        <img src="./assets/images/logo.gif" alt="Logo" class="logo">
+        <nav class="navigation" id="header">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Rules</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="overlay"></div>
+
+        <div class="wrapper">
+            <span class="icon-close">
+                <ion-icon name="close-circle-outline"></ion-icon>
+            </span>
+
+            <div class="form-box login">
+                <h2>Login</h2>
+                <div id="login-error" class="error-message"></div>
+                <form action="rules.html" id="login-form" method="POST">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <h2>Registration</h2>
+                <form action="#" id="register-form" method="POST">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <input type="text" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">I agree to the terms & conditions</label>
+                    </div>
+                    <button type="submit" class="btn"></a>Register</button>
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="landing-page">
+            <h1 class="title">DISCOTHELLO</h1><br><br>
+            <h3 class="en-tete">Explore the depths of strategy in this captivating game where every move can change the tide!</h3><br><br>
+            <div class="content-container">
+                <div class="content">
+                    <p class="left">Discover a new dimension of classical gaming with Othello, where the classic strategy game comes to life with 3D graphics. Perfect for beginners and veterans alike.</p>
+                    <img src="./assets/images/images-game/Plateau.png" alt="Othello" class="othello-right" width="400px" height="350">
+                </div>
+                <div class="content">
+                    <img src="./assets/images/images-game/Multiplayer.png" alt="Multiplayer" class="multiplayer-left" width="400px" height="390">
+                    <p class="right">Choose between single-player mode to improve your skills, multiplayer mode to take on friends and opponents from all over the world, or Player vs AI mode to test your strategies against computer-controlled adversaries. Each game is a new strategic adventure.</p>
+                </div>
+                <div class="content">
+                    <p class="left">Access detailed tutorials and chat with other players via our integrated chat. Share your strategies, learn from others and benefit from a passionate and active community.</p>
+                    <img src="./assets/images/images-game/Chat-game.png" alt="Chat" class="othello-right" width="220" height="400">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="page-footer">
+            <div class="bloc about-section">
+                <h2>About DiscOthello</h2>
+                <p>
+                    DiscOthello was inspired by the fact that there aren't many Othello games available in 3D and online too. The project started as a way to challenge ourselves and create something engaging and fun for all ages. It evolved into a portfolio project for Holberton School, showcasing our skills and creativity.</p>
+                <p><br>
+                    The project was developed over a two-month period, from initial concept to final implementation. We're proud of the work we've done and can't wait to share it with the world.</p>
+            </div>
+            <div class="bloc contact-section">
+                <h2>Connect with us:</h2>
+                <div class="member1">
+                    <p>Rodrigue :</p>
+                    <ul id="icon">
+                        <li><a href="https://www.linkedin.com/in/abdou-rodrigue-hassany-mohamed" target="_blank"><img src="./assets/images/icons-linkedin.svg" alt="linkedin"></a></li>
+                        <li><a href="https://github.com/Rdrg974" target="_blank"><img src="./assets/images/icons-github.svg" alt="github"></a></li>
+                    </ul>
+                </div>
+                <div class="member2">
+                    <p>Theo :</p>
+                    <ul id="icon">
+                        <li><a href="https://www.linkedin.com/in/théo-jennat-3a2ab7196/" target="_blank"><img src="./assets/images/icons-linkedin.svg" alt="linkedin"></a></li>
+                        <li><a href="https://github.com/tjennat" target="_blank"><img src="./assets/images/icons-github.svg" alt="github"></a></li>
+                    </ul>
+                </div>
+                <p>
+                    View the project on <a href="https://github.com/Rdrg974/holbertonschool-portfolio" target="_blank">GitHub</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/scripts/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

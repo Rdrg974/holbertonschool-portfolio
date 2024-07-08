@@ -1,0 +1,81 @@
+footer {
+    flex-shrink: 0;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+}
+
+.page-footer {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    padding: 50px 0 100px;
+}
+
+footer .about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    margin-left: -60px;
+}
+
+footer .about-section h2 {
+    margin-bottom: 10px;
+}
+
+footer .about-section p {
+    margin-bottom: 10px;
+}
+
+footer .about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .about-section ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer .about-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .about-section ul li a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 10px 0 0;
+}
+
+footer .contact-section h2 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#icon {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#icon a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

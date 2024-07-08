@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | DiscOthello</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="./assets/images/logo.gif" alt="Logo" class="logo">
+        <nav class="navigation">
+            <a href="profile.html">Profil</a>
+            <a href="rules.html">Rules</a>
+            <a href="./games/game.html">Game</a>
+            <a href="scores.html">Scores</a>
+            <button class="btnLogout-popup">Log Out</button>
+        </nav>
+    </header>
+    <div class="profile-wrapper">
+        <div class="profile-box">
+            <h2>User Profile</h2>
+            <div class="profile-info">
+                <div class="input-box">
+                    <p>Username :</p>
+                    <span id="profile-username"></span>
+                </div>
+                <div class="input-box">
+                    <p>Email :</p>
+                    <span id="profile-email"></span>
+                </div>
+                <div class="input-box">
+                    <p>Change Password</p>
+                </div>
+            </div>
+            <div class="button-container">
+                <form id="change-password-form">
+                    <div class="input-box">
+                        <input type="password" id="new-password" placeholder="New Password:" required>
+                    </div>
+                    <button type="submit" class="btn">Change Password</button>
+                </form>
+                <button id="delete-account-button" class="btn">Delete Account</button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/scripts/profile.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+</body>
+</html>
