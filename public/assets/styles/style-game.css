@@ -263,3 +263,73 @@ header {
   width: 2px;
   background-color: #f6f6f6;
 }
+
+@media only screen and (max-width: 1200px) {
+  #gameContainer {
+    left: 5%;
+    right: 35%;
+  }
+
+  .chatContainer {
+    right: 5%;
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation a {
+    margin-left: 0;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+  }
+
+  .navigation .btnLogout-popup {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  #gameContainer {
+    left: 5%;
+    right: 50%;
+  }
+
+  .chatContainer {
+    right: 5%;
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo {
+    max-width: 100px;
+  }
+
+  .navigation a {
+    font-size: 1em;
+  }
+
+  .navigation .btnLogout-popup {
+    font-size: 0.9em;
+    width: 100px;
+    height: 40px;
+  }
+
+  #gameContainer {
+    top: 10%;
+    left: 5%;
+    right: 50%;
+    bottom: 10%;
+  }
+
+  .chatContainer {
+    top: 10%;
+    right: 5%;
+    width: 45%;
+    height: 80%;
+  }
+}

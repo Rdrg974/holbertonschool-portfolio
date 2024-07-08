@@ -6,47 +6,61 @@ footer {
 }
 
 .page-footer {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Change from center to space-between */
     align-items: flex-start;
     font-size: 20px;
-    padding: 50px 0 100px;
+    padding: 50px 20px 100px;
+    box-sizing: border-box;
 }
 
-footer .about-section {
-    max-width: 800px;
-    margin: 0 auto;
+footer .about-section,
+footer .contact-section {
+    flex: 1;
+    max-width: 45%; /* Adjust to fit within the container */
+    margin: 20px 2%; /* Increase margin to add more space */
     padding: 20px;
-    text-align: left;
-    margin-left: -60px;
+    box-sizing: border-box;
 }
 
-footer .about-section h2 {
+footer .contact-section {
+    margin-left: 300px;
+}
+
+footer .about-section h2,
+footer .contact-section h2 {
     margin-bottom: 10px;
 }
 
-footer .about-section p {
+footer .about-section p,
+footer .contact-section p {
     margin-bottom: 10px;
 }
 
-footer .about-section ul {
+footer .about-section ul,
+footer .contact-section ul {
     list-style: none;
     padding: 0;
 }
 
-footer .about-section ul li {
+footer .about-section ul li,
+footer .contact-section ul li {
     display: inline;
     margin-right: 10px;
 }
 
-footer .about-section ul li a {
+footer .about-section ul li a,
+footer .contact-section ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-footer .about-section ul li a:hover {
+footer .about-section ul li a:hover,
+footer .contact-section ul li a:hover {
     text-decoration: underline;
 }
 
@@ -54,16 +68,12 @@ footer p {
     margin: 10px 0 0;
 }
 
-footer .contact-section h2 {
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
 #icon {
     display: flex;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 #icon a {
@@ -78,4 +88,41 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .page-footer {
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+        padding: 30px 20px;
+    }
+
+    footer .about-section,
+    footer .contact-section {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    #icon {
+        justify-content: center;
+    }
+
+    footer .about-section ul li,
+    footer .contact-section ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-footer {
+        font-size: 16px;
+    }
+
+    footer .about-section ul li,
+    footer .contact-section ul li {
+        margin-right: 0;
+    }
 }
