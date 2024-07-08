@@ -1,11 +1,6 @@
 const mysql = require('mysql');
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Classe-97420',
-    database: 'db-game-othello'
-});
+const db = mysql.createConnection(process.env.JAWSDB_URL);
 
 db.connect(err => {
     if (err) throw err;
