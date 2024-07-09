@@ -162,7 +162,8 @@ header {
   background-color: rgba(235, 235, 235, 0.1);
   margin-left: 1050px;
   margin-top: 95px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;;
+  z-index: 99;
 }
 
 .name {
@@ -264,15 +265,20 @@ header {
   background-color: #f6f6f6;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1920px) {
   #gameContainer {
-    left: 5%;
-    right: 35%;
+    left: -5%;
+  }
+
+  #unity-canvas {
+    width: 80%;
+    height: 80%;
   }
 
   .chatContainer {
-    right: 5%;
-    width: 35%;
+    width: 21,5%;
+    margin-top: 12%;
+    margin-left: 65%;
   }
 }
 
