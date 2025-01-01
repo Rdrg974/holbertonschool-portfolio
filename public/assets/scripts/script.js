@@ -57,19 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const contents = [
         {
-            image: "../assets/images/tuto-1.png",
+            image: "./assets/images/tuto-1.png",
             text: "Each player is assigned a color and receives counters. Each is black on one side and white on the other. Black pawns start the game by placing the first pawn in a location that encloses an opponent."
         },
         {
-            image: "../assets/images/tuto-2.png",
+            image: "./assets/images/tuto-2.png",
             text: "To 'enclose' a disc means to surround one or more of your opponent's pieces with two of your own."
         },
         {
-            image: "../assets/images/tuto-3.png",
+            image: "./assets/images/tuto-3.png",
             text: "All black pawns between the two white pawns are then flipped over (captured), showing their white side. A piece can capture any number of the opponent's pieces (diagonally, horizontally or vertically)."
         },
         {
-            image: "../assets/images/tuto-4.png",
+            image: "./assets/images/tuto-4.png",
             text: "If a player cannot enclose at least one of his opponent's pawns, he is forced to skip his turn. When neither player can move any more pieces, the game ends. The winner at the end of the game is the player with the most pieces on the board."
         }
     ];
